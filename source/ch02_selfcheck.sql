@@ -25,7 +25,11 @@
 -- 7 모든 커피 데이터를 조회하세요.
 
 CREATE DATABASE starbuuks;
-CREATE TABLE coffees;
+CREATE TABLE coffees (
+	  id INT PRIMARY KEY,           
+    name VARCHAR(100),
+    price INT
+);
 
 INSERT INTO coffees (id, name, price) 
 VALUES
@@ -38,10 +42,13 @@ VALUES
 SELECT * 
 FROM coffees;
 
-UPDATE coffees
+SET SQL_SAFE_UPDATES = 0;
+UPDATE coffees 
 SET price = price + 200
 WHERE name = '카푸치노';
+
 DELETE FROM coffees
 WHERE name = '콜드브루';
+
 SELECT * 
 FROM coffees;
